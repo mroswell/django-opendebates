@@ -75,7 +75,7 @@ def merge(request):
         votes_to_merge.update(original_merged_submission=to_remove, submission=duplicate_of)
         to_remove.duplicate_of = duplicate_of
         to_remove.save()
-        msg = _(u'Question has been merged.')
+        msg = _(u'Issue has been merged.')
         if request.POST.get("send_email") == "yes":
             send_email("your_idea_is_merged", {"idea": to_remove})
             send_email("idea_merged_into_yours", {"idea": duplicate_of})

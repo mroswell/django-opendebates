@@ -47,7 +47,7 @@
           {% endif %}
           <div class="controls">
             <textarea id="headline" name="headline" type="text" class="input-large" maxlength="80"
-                   placeholder="{% blocktrans %}Enter your question here{% endblocktrans %}">{{ form.data.headline }}</textarea>
+                   placeholder="{% blocktrans %}Enter your issue here{% endblocktrans %}">{{ form.data.headline }}</textarea>
             <div class="text-limit-counter" data-total="80"><span class="count">80</span> / 80</div>
           </div>
         </div>
@@ -83,7 +83,7 @@
                name="submitquestionbutton"
                class=" btn btn-primary submitquestionbutton"
                data-add-question-url="{% url 'questions' %}">
-              {% blocktrans %}Add Your Question{% endblocktrans %}</button>
+              {% blocktrans %}Add Your Issue{% endblocktrans %}</button>
           </div>
         </div>
 

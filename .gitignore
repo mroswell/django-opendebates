@@ -22,3 +22,5 @@ node_modules
 *.sqlite3
 aws.sh
 fabsecrets*.py
+.idea/
+venv/
