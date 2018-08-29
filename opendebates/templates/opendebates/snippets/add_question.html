@@ -6,12 +6,12 @@
 <div>
   <div id="sidebar_question_btn" {% if form.errors %}class="hidden"{% endif %}>
     <a href="{% url 'questions' %}" class="btn btn-block btn-primary active" type="button">
-      {% blocktrans %}Submit a Question{% endblocktrans %}
+      {% blocktrans %}Submit an Issue{% endblocktrans %}
     </a>
   </div>
   <div id="add_question" class="{% if form.errors %} has-errors{% endif %}">
     <img src="{% static "images/add-question-header.png" %}" />
-    <h2>{% blocktrans %}Submit a Question{% endblocktrans %}</h2>
+    <h2>{% blocktrans %}Submit an Issue{% endblocktrans %}</h2>
 
     <form action="{% url 'questions' %}" method="POST" class="form-inline">
       {% csrf_token %}
@@ -46,9 +46,9 @@
           {{ form.errors.headline }}
           {% endif %}
           <div class="controls">
-            <textarea id="headline" name="headline" type="text" class="input-large" maxlength="80"
+            <textarea id="headline" name="headline" type="text" class="input-large" maxlength="160"
                    placeholder="{% blocktrans %}Enter your issue here{% endblocktrans %}">{{ form.data.headline }}</textarea>
-            <div class="text-limit-counter" data-total="80"><span class="count">80</span> / 80</div>
+            <div class="text-limit-counter" data-total="160"><span class="count">160</span> / 160</div>
           </div>
         </div>
 
@@ -58,9 +58,9 @@
           {{ form.errors.question }}
           {% endif %}
           <div class="controls">
-            <textarea id="question" name="question" type="text" rows="4" class="input-large" maxlength="200"
+            <textarea id="question" name="question" type="text" rows="4" class="input-large" maxlength="2000"
                       placeholder="{% blocktrans %}Enter your supporting text here"{% endblocktrans %}>{{ form.data.question }}</textarea>
-            <div class="text-limit-counter" data-total="200"><span class="count">200</span> / 200</div>
+            <div class="text-limit-counter" data-total="2000"><span class="count">2000</span> / 2000</div>
           </div>
         </div>
 
