@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>
-    {% block title %}Open Debates{% endblock %}
+    {% block title %}Maryland Issues{% endblock %}
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   {% block metadata %}
@@ -52,9 +52,9 @@
   <header>
     <div class="header-logos">
       <a href="{% url 'list_ideas' %}">
-        <img src="{% static "images/mdflag.jpeg" %}">
-        <img src="{% static "images/logo-header-partner-1.png" %}">
-        <img src="{% static "images/logo-header-partner-2.png" %}">
+        &nbsp;&nbsp;<img src="{% static "images/mdflag.jpeg" %}">
+        <!img src="{% static "images/logo-header-partner-1.png" %}"-->
+        <!img src="{% static "images/logo-header-partner-2.png" %}"-->
       </a>
     </div>
     <div class="login-container{% if request.user.is_authenticated %} login-container-authenticated{% endif %}">
@@ -71,20 +71,20 @@
     </div>
     <div class="header-title">
       <h1><a href="/">{{ SITE_THEME.HEADER_TITLE|linebreaks }}</a></h1>
-      <div class="header-copy">{{ SITE_THEME.HEADER_COPY }}</div>
+      <div class="header-copy">{{ SITE_THEME.HEADER_COPY | linebreaksbr }}</div>
       <div class="header-small-logos">
-        <img src="{% static "images/logo-header-partner-1.png" %}">
-        <img src="{% static "images/logo-header-partner-2.png" %}">
+        <! img src="{% static "images/logo-header-partner-1.png" %}"-->
+        <! img src="{% static "images/logo-header-partner-2.png" %}"-->
       </div>
       <div class="header-bottom">
         <div class="header-votes">
-          {% if SHOW_TOTAL_VOTES %}<span class="number">{{ NUMBER_OF_VOTES|stringformat:"07d" }}</span>{% blocktrans %}total&nbsp;votes{% endblocktrans %}{% endif %}
+          {% if SHOW_TOTAL_VOTES %}<span class="number">{{ NUMBER_OF_VOTES|stringformat:"03d" }}</span>{% blocktrans %}total&nbsp;votes{% endblocktrans %}{% endif %}
         </div>
         <div class="header-count-down">
           <span class="number days">30</span> {% blocktrans %}days{% endblocktrans %}
           <span class="number hours">12</span> {% blocktrans %}hrs{% endblocktrans %}
           <span class="number minutes">5</span> {% blocktrans %}mins{% endblocktrans %}
-          {% blocktrans %}until&nbsp;the&nbsp;event{% endblocktrans %}
+          {% blocktrans %}until&nbsp;Election&nbsp;Day{% endblocktrans %}
         </div>
       </div>
     </div>

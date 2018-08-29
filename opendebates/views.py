@@ -411,7 +411,7 @@ def report(request, id):
             duplicate_of=None,
             defaults=dict(note=request.POST.get("report_why"))
         )
-        messages.info(request, _(u'This question has been flagged for removal.'))
+        messages.info(request, _(u'This issue has been flagged for removal.'))
         return redirect(idea)
     return {
         'idea': idea,
@@ -429,13 +429,13 @@ def merge(request, id):
     voter = Voter.objects.get(user=request.user)
 
     if Flag.objects.filter(to_remove=idea, voter=voter).exists():
-        messages.info(request, _(u'You have already flagged this question.'))
+        messages.info(request, _(u'You have already flagged this issue.'))
         return redirect(idea)
 
     form = MergeFlagForm(idea=idea, voter=voter, data=request.POST or None)
     if request.method == 'POST' and form.is_valid():
         form.save()
-        messages.info(request, _(u'This question has been flagged for merging.'))
+        messages.info(request, _(u'This issue has been flagged for merging.'))
         return redirect(idea)
     return {
         'idea': idea,

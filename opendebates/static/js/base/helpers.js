@@ -177,7 +177,7 @@
         "static": ODebates.paths.static,
         "login": ODebates.paths.login,
         "register": ODebates.paths.register,
-        "msg": "You must first log in or create an account to report a question. After you've done so, simply find the question you were looking at and try again!"
+        "msg": "You must first log in or create an account to report an issue. After you've done so, simply find the issue you were looking at and try again!"
       })).appendTo("body").modal("show");
       return false;
     }
@@ -193,10 +193,10 @@
       "action": ODebates.paths.report.replace('/0/', '/'+ideaId+'/'),
       "csrf": csrf,
       "checkboxOptions": [
-        {"label": "This question is spam or a scam"},
-        {"label": "This question contains explicit content or hate speech"},
-        {"label": "This is not a question"},
-        {"label": "This question violates the Participation Guidelines"}
+        {"label": "This issue is spam or a scam"},
+        {"label": "This issue contains explicit content or hate speech"},
+        {"label": "This is not an issue"},
+        {"label": "This issue violates the Participation Guidelines"}
       ]
     })).appendTo("body").modal("show");
     ODebates.helpers.attachEvents();
@@ -213,7 +213,7 @@
         "static": ODebates.paths.static,
         "login": ODebates.paths.login,
         "register": ODebates.paths.register,
-        "msg": "You must first log in or create an account to suggest a merge. After you've done so, simply find the question you were looking at and try again!"
+        "msg": "You must first log in or create an account to suggest a merge. After you've done so, simply find the issue you were looking at and try again!"
       })).appendTo("body").modal("show");
       return false;
     }

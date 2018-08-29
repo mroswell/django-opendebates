@@ -104,9 +104,9 @@ def remove(request):
     remove = request.POST.get('action').lower() == 'remove'
     if remove:
         to_remove.approved = False
-        msg = _(u'The question has been removed.')
+        msg = _(u'The issue has been removed.')
     else:
-        msg = _(u'The question has been kept and removed from the moderation list.')
+        msg = _(u'The issue has been kept and removed from the moderation list.')
     to_remove.moderated_removal = True
     to_remove.removal_flags.all().update(reviewed=True)
     to_remove.save()

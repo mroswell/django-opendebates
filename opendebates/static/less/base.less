@@ -12,8 +12,8 @@
 // Theming
 @separationColor: #d7e4e9;
 @brand-primary: #00304d;
-@brand-secondary: #6195a6;
-@brand-tertiary: #d61820;
+@brand-secondary: #f1c150; // #6195a6;
+@brand-tertiary: #a72b52; //#a72b52
 @brand-button-color: #00263e;
 @error-color: #bf3737;
 
@@ -173,7 +173,7 @@ body > .container {
     color: white;
     padding: 10px;
     .full({
-      min-height: 250px;
+      min-height: 100px;
       padding: 10px 280px;
       position: relative;
     });
@@ -181,7 +181,6 @@ body > .container {
     &::before {
       .full({
         content: "";
-        background-image: url(/static/images/megaphone-left.png);
         left: 15px;
         bottom: 0;
         height: 130px;
@@ -220,7 +219,8 @@ body > .container {
 
   > header {
     .responsive({
-      background-image: url(/static/images/header-bg.png);
+      //background-image: url(/static/images/header-bg.png);
+      background-color: #000000;
       background-size: cover;
       min-height: 100px;
       font-family: Knockout;
@@ -253,7 +253,7 @@ body > .container {
         width: @header-logo-width;
         text-align: center;
         height: 100%;
-        display: inline-flex;
+        //display: inline-flex;
         flex-direction: row;
         flex-wrap: wrap;
       }, {
@@ -319,8 +319,8 @@ body > .container {
         .shim-interpolate(font-size, 55px, 85px);
         .shim-interpolate(letter-spacing, 2px, 4px);
         .responsive({
-          letter-spacing: 4px;
-          font-size: 90px;
+          letter-spacing: 3px;
+          font-size: 80px;
         }, {
           letter-spacing: 2px;
           font-size: 30px;
@@ -348,11 +348,12 @@ body > .container {
         }, {
           letter-spacing: 0.1px;
           line-height: 20px;
-          font-size: 14px;
+          font-size: 15px;
         });
         text-transform: none;
         font-family: Helvetica;
-        font-weight: 100;
+        font-weight: 500;
+        max-width: 84%;
 
         .shim-interpolate(font-size, 13px, 18px);
         .shim-interpolate(line-height, 18px, 24px);

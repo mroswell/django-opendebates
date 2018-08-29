@@ -17,44 +17,44 @@ SITE_DOMAIN_WITH_PROTOCOL = "https://" + SITE_DOMAIN
 SUBMISSIONS_PER_PAGE = 25
 
 SITE_THEMES = {
-    'florida': {
-        "HASHTAG": u"FLOpenDebate",
-        "HEADER_TITLE": _(u"WELCOME TO THE\nFLORIDA OPEN DEBATE"),
+    'maryland': {
+        "HASHTAG": u"MarylandIssues",
+        "HEADER_TITLE": _(u"WELCOME TO\nMARYLAND ISSUES"),
         "HEADER_COPY": _(
-            u"Ask Congressman David Jolly (R-FL) and Congressman Alan Grayson (D-FL) about "
-            u"the issues that are most important "
-            "to you -- then vote and tell others! Watch the Florida Open Debate for U.S. "
-            "Senate right here on Monday, April 25, at 7:00 pm EDT. All questions "
-            "will be chosen from among those that receive the most votes online."),
+            u"Dear Maryland Leaders,\n"
+            u"Please share challenges dealing with the Hogan administration, "
+            u"policy disagreements, and misplaced administration priorities. "
+            u"You may also vote on issues submitted by others "
+            u"to help raise the profile of those issues."),
         "TWITTER_IMAGE":
             "https://s3.amazonaws.com/s3.boldprogressives.org/images/"
             "OpenDebates_VOTE-NOW_TW-1024x512-FODUrl.png",
         "TWITTER_SITE_TEXT":
-            u"VOTE & submit questions for #FLSen #OpenDebate between @DavidJollyFL & "
+            u"VOTE & submit questions for #FLSen #MarylandIssue between @DavidJollyFL & "
             u"@AlanGrayson h/t @OpenDebates @ProgChangeInst",
         "TWITTER_SITE_TITLE":
             u"U.S. Senate candidates answer YOUR questions!",
         "TWITTER_SITE_DESCRIPTION":
-            u"Voters set the agenda for groundbreaking #OpenDebate. Tune in Mon 4/25 @7pm EDT "
+            u"Voters set the agenda for groundbreaking #MarylandIssue. Tune in Mon 4/25 @7pm EDT "
             u"on TYTNetwork.com. Submit & vote here!",
         "TWITTER_QUESTION_TEXT":
-            u"VOTE & submit questions for #FLSen #OpenDebate between @DavidJollyFL & @AlanGrayson "
+            u"VOTE & submit questions for #FLSen #MarylandIssue between @DavidJollyFL & @AlanGrayson "
             u"h/t @OpenDebates @ProgChangeInst",
         "TWITTER_QUESTION_TITLE":
-            u"Vote on this question for the FL-Sen #OpenDebate!",
+            u"Vote on this question for the FL-Sen #MarylandIssue!",
         "TWITTER_QUESTION_DESCRIPTION":
             u'"{idea}" Debate is 4/25 at 7pm EDT on TYTNetwork.com.',
 
         "FACEBOOK_IMAGE":
-            "https://s3.amazonaws.com/s3.boldprogressives.org/images/"
-            "OpenDebates_VOTE-NOW_FB-1200x717-FODUrl.png",
+            "https://res.cloudinary.com/organica/image/upload/v1535501672/marylandissues/"
+            "MarylandIssues360.png",
         "FACEBOOK_SITE_TITLE":
-            u"HISTORIC: Florida U.S. Senate Candidates answer YOUR top-voted questions!",
+            u"CROWDSOURCE: How has the Hogan administration dealt with YOUR policy issues?",
         "FACEBOOK_SITE_DESCRIPTION":
             u"All questions for groundbreaking #OpenDebate on Mon 4/25 @7pm EDT on TYTNetwork.com "
             u"will be chosen from top vote-getters online. Hosted by Open Debate Coalition",
         "FACEBOOK_QUESTION_TITLE":
-            u'Click to vote on this question for Senate candidates to answer at the #OpenDebate '
+            u'Click to vote on this issue for Senate candidates to answer at the #MarylandIssues '
             u'in Florida!',
         "FACEBOOK_QUESTION_DESCRIPTION":
             u'"{idea}" Mon, 4/25 @7pm EDT on TYTNetwork.com, Jolly & Grayson answer YOUR '
@@ -137,11 +137,11 @@ SITE_THEMES = {
         "EMAIL_BODY": "Vote for my progressive idea for @OpenDebaters %(url)s",
     },
 }
-SITE_THEME_NAME = 'florida'
+SITE_THEME_NAME = 'maryland'
 SITE_THEME = SITE_THEMES[SITE_THEME_NAME]
-# SITE_THEME_NAME and SITE_THEME get overriden in local_settings
+# SITE_THEME_NAME and SITE_THEME get overridden in local_settings
 
-# SECRET_KEY is overriden in deploy settings
+# SECRET_KEY is overridden in deploy settings
 SECRET_KEY = 'secret-key-for-local-use-only'
 
 TEST = 'test' in sys.argv
