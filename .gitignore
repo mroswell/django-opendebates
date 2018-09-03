@@ -24,3 +24,12 @@ aws.sh
 fabsecrets*.py
 .idea/
 venv/
+# Vagrant
+.vagrant
+*.log
+vagrant_ansible_inventory_default
+
+# Ansible
+*.retry
+venv/
+*.pyc
