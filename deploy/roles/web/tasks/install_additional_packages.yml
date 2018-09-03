@@ -12,4 +12,5 @@
     - libcurl4-gnutls-dev
     - gnutls-dev
     - libpq-dev
+    - ruby
     - "{{ virtualenv_python_version + '-dev' }}"
