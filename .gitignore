@@ -1,26 +1,12 @@
-#*
-.#*
-*.sw[po]
-*.py[co]
-.project
-.pydevproject
-*~
-*.db
-*.orig
-*.out
-*.DS_Store
-.coverage
+# PyCharm IDE
+.idea
+
+# Vagrant
 .vagrant
-*/local_settings.py
-public/static/
-public/media/
-conf/pillar/*/deploy
-*.priv
-.env
-node_modules
-*/static/js/bundle.js
-*/static/css
-*.sqlite3
-aws.sh
-fabsecrets*.py
-/static/
+*.log
+vagrant_ansible_inventory_default
+
+# Ansible
+*.retry
+venv/
+*.pyc

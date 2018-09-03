@@ -1,0 +1,8 @@
+[all:vars]
+env=development
+
+[webservers]
+159.89.236.138 nginx_use_letsencrypt=false
+
+[dbservers]
+localhost
