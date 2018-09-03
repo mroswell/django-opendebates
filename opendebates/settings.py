@@ -153,7 +153,7 @@ if TEST:
 else:
     DEBUG = 'DJANGO_DEBUG' in os.environ
 
-ALLOWED_HOSTS = [os.environ.get('SITE_DOMAINS').split(",")]
+ALLOWED_HOSTS = [os.environ.get('SITE_DOMAIN').split(",")]
 
 INSTALLED_APPS = [
     'django.contrib.auth',

@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/
 
 import os
 
+import dotenv
+dotenv.read_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env'))
 
 # Make sure settings module is set BEFORE get_wsgi application and also
 # that we process settings before importing DjangoWhiteNoise...
