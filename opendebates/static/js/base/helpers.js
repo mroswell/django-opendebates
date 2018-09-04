@@ -343,7 +343,7 @@
     //   };
     //   /* Run first time immediately, to fill in that part of the page */
     //   setTimeout(fetch, 0, 0);
-    }
+    //}
   });
 
   function setCountDown() {
