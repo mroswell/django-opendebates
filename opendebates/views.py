@@ -1,4 +1,5 @@
 import json
+import datetime
 import logging
 
 from django.contrib.auth.decorators import login_required
@@ -315,7 +316,8 @@ def questions(request):
         followup=form_data['question'],
         idea=(u'%s %s' % (form_data['headline'], form_data['question'])).strip(),
         citation=form_data['citation'],
-        happened=form_data['happened'],
+        happened=form_data['happened'] if form_data['happened'] else datetime.datetime.now(),
+        is_positive=form_data['is_positive'],
         created_at=timezone.now(),
         ip_address=get_ip_address_from_request(request),
         approved=True,

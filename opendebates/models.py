@@ -96,6 +96,7 @@ class Submission(models.Model):
     source = models.CharField(max_length=255, null=True, blank=True)
 
     happened = models.DateField(default=datetime.datetime.now)
+    is_positive = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['-happened']

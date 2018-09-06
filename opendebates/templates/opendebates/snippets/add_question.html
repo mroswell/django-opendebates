@@ -85,6 +85,17 @@
           </div>
         </div>
 
+      <div class="control-group">
+          {% if form.errors.is_positive %}
+          {{ form.errors.is_positive }}
+          {% endif %}
+          <div class="controls">
+            <input id="is_positive" name="is_positive" type="checkbox" class="input-large" value="1"
+                   placeholder="{% blocktrans %}Was this positive or negative{% endblocktrans %}">
+              <label for="is_positive">Was this positive?</label>
+          </div>
+        </div>
+
         <!-- Button -->
         <div class="control-group">
           <div class="controls controls-submit">

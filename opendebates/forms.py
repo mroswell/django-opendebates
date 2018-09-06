@@ -36,6 +36,7 @@ class QuestionForm(forms.Form):
     question = forms.CharField(required=False)
     citation = forms.URLField(required=False, max_length=255)
     happened = forms.DateField(required=False)
+    is_positive = forms.BooleanField(required=False)
 
     def __init__(self, *args, **kwargs):
         super(QuestionForm, self).__init__(*args, **kwargs)
