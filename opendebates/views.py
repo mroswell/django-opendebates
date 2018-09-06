@@ -82,7 +82,8 @@ def recent_activity(request):
 def list_ideas(request):
     ideas = Submission.objects.all()
     citations_only = request.GET.get("citations_only")
-    sort = choose_sort(request.GET.get('sort'))
+    #sort = choose_sort(request.GET.get('sort'))
+    sort = '-happened'
 
     ideas = sort_list(citations_only, sort, ideas)
 
@@ -176,12 +177,13 @@ def vote(request, id):
             approved=True).exclude(id=idea.id)[:2]) + [None, None]
         related1 = two_other_approved_ideas[0]
         related2 = two_other_approved_ideas[1]
+
         return {
             'idea': idea,
             'show_duplicates': True,
             'related1': related1,
             'related2': related2,
-            'duplicates': (Submission.objects.filter(approved=True, duplicate_of=idea)
+            'duplicates': (Submission.objects.filter(approved=True, duplicate_of=idea).order_by('-happened')
                            if idea.has_duplicates else []),
             # 'comment_form': CommentForm(idea),
             # 'comment_list': idea.comments.filter(
@@ -313,6 +315,7 @@ def questions(request):
         followup=form_data['question'],
         idea=(u'%s %s' % (form_data['headline'], form_data['question'])).strip(),
         citation=form_data['citation'],
+        happened=form_data['happened'],
         created_at=timezone.now(),
         ip_address=get_ip_address_from_request(request),
         approved=True,

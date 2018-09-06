@@ -75,6 +75,16 @@
           </div>
         </div>
 
+        <div class="control-group">
+          {% if form.errors.happened %}
+          {{ form.errors.happened }}
+          {% endif %}
+          <div class="controls">
+            <input id="happened" name="happened" type="text" class="input-large" value="{{ form.data.citation }}"
+                   placeholder="{% blocktrans %}Optional: when did it happen{% endblocktrans %}">
+          </div>
+        </div>
+
         <!-- Button -->
         <div class="control-group">
           <div class="controls controls-submit">
