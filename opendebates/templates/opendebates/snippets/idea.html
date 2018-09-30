@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load i18n %}
 {% load l10n %}
 {% load cache %}
 
@@ -68,7 +69,9 @@
     <div class="idea-info">
       {% blocktrans with user_display_name=idea.user_display_name %}Submitted by: <strong>{{ user_display_name }}</strong>{% endblocktrans %}<br />
       {{ idea.created_at }}<br />
-      {% trans "Issue area" %}: <a href="{% url 'list_category' idea.category.id %}"><strong>{{ idea.category.name }}</strong></a>
+        <div>{% trans "Issue area" %}: <a href="{% url 'list_category' idea.category.id %}"><strong>{{ idea.category.name }}</strong></a></div>
+        <div>{% if idea.happened %}When did this happen: <strong>{{ idea.happened }}</strong>{% endif %}</div>
+        <div>Was it positive: <strong>{% if idea.is_positive %}Positive{% else %}Negative{% endif %}</strong></div>
     </div>
     {% include "opendebates/snippets/social-links.html" %}
     <div class="idea-actions">

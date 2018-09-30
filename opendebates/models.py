@@ -95,6 +95,12 @@ class Submission(models.Model):
 
     source = models.CharField(max_length=255, null=True, blank=True)
 
+    happened = models.DateField(default=datetime.datetime.now)
+    is_positive = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['-happened']
+
     def get_recent_votes(self):
         timespan = datetime.datetime.now() - datetime.timedelta(1)
         return Vote.objects.filter(submission=self, created_at__gte=timespan).count()
