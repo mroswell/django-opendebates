@@ -81,10 +81,19 @@
           {% if SHOW_TOTAL_VOTES %}<span class="number">{{ NUMBER_OF_VOTES|stringformat:"03d" }}</span>{% blocktrans %}total&nbsp;votes{% endblocktrans %}{% endif %}
         </div>
         <div class="header-count-down">
-          <span class="number days">30</span> {% blocktrans %}days{% endblocktrans %}
-          <span class="number hours">12</span> {% blocktrans %}hrs{% endblocktrans %}
-          <span class="number minutes">5</span> {% blocktrans %}mins{% endblocktrans %}
-          {% blocktrans %}until&nbsp;Election&nbsp;Day{% endblocktrans %}
+          <span class="header-count-down">
+            <span class="number days">30</span> {% blocktrans %}days{% endblocktrans %}
+            <span class="number hours">12</span> {% blocktrans %}hrs{% endblocktrans %}
+            <!--span class="number minutes">5</span> {% blocktrans %}mins{% endblocktrans %}-->
+            {% blocktrans %}until&nbsp;Election&nbsp;Day{% endblocktrans %}
+          </span>
+          <br class="spacer">
+          <span class="header-count-down-early-voting">
+            <span class="number days">30</span> {% blocktrans %}days{% endblocktrans %}
+            <span class="number hours">12</span> {% blocktrans %}hrs{% endblocktrans %}
+            <!--span class="number minutes">5</span> {% blocktrans %}mins{% endblocktrans %}-->
+            {% blocktrans %}until&nbsp;Early Voting{% endblocktrans %}
+          </span>
         </div>
       </div>
     </div>
@@ -134,6 +143,8 @@
 
   ODebates.paths.static = "{{ STATIC_URL }}";
   ODebates.debate_time_utc = new Date("{{ DEBATE_TIME|utc|date:'c' }}");
+  ODebates.early_vote_time_utc = new Date("2018-10-25T13:00:00+00:00");
+
   ODebates.paths.report = "{% url 'report' 0 %}";
   ODebates.paths.merge = "{% url 'merge' 0 %}";
   ODebates.paths.login = "{% url 'auth_login' %}";

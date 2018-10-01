@@ -346,9 +346,9 @@
     //}
   });
 
-  function setCountDown() {
+  function setCountDown(selector, target) {
+    console.log('target', target);
     var now = new Date();
-    var target = ODebates.debate_time_utc;
     var d = target - now;
     if (d < 0) {
       $('.header-count-down .number').text('0');
@@ -357,13 +357,27 @@
       var hours = parseInt((d - (days*24*60*60*1000)) / (1000 * 60 * 60));
       var minutes = parseInt((d - (days*24*60*60*1000) - (hours*60*60*1000)) / (1000 * 60));
 
-      $('.header-count-down .days').text(days);
-      $('.header-count-down .hours').text(hours);
-      $('.header-count-down .minutes').text(minutes);
+      $(selector + ' .days').text(days);
+      $(selector + ' .hours').text(hours);
+      //$(selector + ' .minutes').text(minutes);
     }
   }
-  setInterval(setCountDown, 60000);
-  setCountDown();
+
+  function setCountDownElectionDay() {
+    var target = ODebates.debate_time_utc;
+    setCountDown('.header-count-down', target);
+  }
+
+  function setCountDownEarlyVoting() {
+    var target = ODebates.early_vote_time_utc;
+    setCountDown('.header-count-down-early-voting', target);
+  }
+
+  setInterval(setCountDownElectionDay, 60000);
+  setCountDownElectionDay();
+
+  setInterval(setCountDownEarlyVoting, 60000);
+  setCountDownEarlyVoting();
 
   $('.selectpicker').selectpicker();
 

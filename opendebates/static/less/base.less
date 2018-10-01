@@ -400,7 +400,7 @@ body > .container {
           width: 100%;
         });
       }
-      .header-votes, .header-count-down {
+      .header-votes, .header-count-down, .header-count-down-early-voting {
         display: inline-block;
         font-size: 26px;
         letter-spacing: 1px;
@@ -442,7 +442,7 @@ body > .container {
         }
       }
 
-      .header-count-down {
+      .header-count-down, .header-count-down-early-voting {
         margin-right: @header-side-padding;
         margin-left: 10px;
         float: right;
@@ -450,6 +450,10 @@ body > .container {
         .number {
           color: @brand-secondary;
         }
+      }
+
+      .spacer {
+        line-height: 5px;
       }
     }
 
