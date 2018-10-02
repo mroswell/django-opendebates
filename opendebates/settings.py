@@ -407,3 +407,43 @@ OPTIMIZELY_KEY = None
 USE_CAPTCHA = True
 
 LOGIN_REDIRECT_URL = '/'
+ADMINS = (('Margie', 'mroswell@gmail.com'),)
+LOGGING = {
+'version': 1,
+'disable_existing_loggers': False,
+'filters': {
+    'require_debug_false': {
+        '()': 'django.utils.log.RequireDebugFalse',
+    },
+    'require_debug_true': {
+        '()': 'django.utils.log.RequireDebugTrue',
+    },
+
+},
+'handlers': {
+    'console': {
+        'level': 'INFO',
+        'filters': ['require_debug_true'],
+        'class': 'logging.StreamHandler',
+    },
+    # Custom handler which we will use with logger 'django'.
+    # We want errors/warnings to be logged when DEBUG=False
+    'console_on_not_debug': {
+        'level': 'WARNING',
+        'filters': ['require_debug_false'],
+        'class': 'logging.StreamHandler',
+    },
+    'mail_admins': {
+        'level': 'ERROR',
+        'filters': ['require_debug_false'],
+        'class': 'django.utils.log.AdminEmailHandler'
+    }
+},
+'loggers': {
+    'django': {
+        'handlers': ['console', 'mail_admins', 'console_on_not_debug'],
+        'level': 'INFO',
+    },
+
+}
+}
