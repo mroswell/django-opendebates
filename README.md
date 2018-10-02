@@ -4,25 +4,33 @@ django-opendebates
 # Installation
 
 Install python 2.7, virtualenv, postgres.
+Install Node.js.
 
+In the root of the django-opendebates repo:
 ```
 $ createdb opendebates
 $ mkvirtualenv opendebates -p `which python2.7`
 (opendebates)$ pip install -r requirements/dev.txt
-(opendebates)$ python opendebates/manage.py migrate
-(opendebates)$ python opendebates/manage.py load_zipcode_database ./zips.csv
-(opendebates)$ npm install bower less
-(opendebates)$ cp opendebates/.env.sample opendebates/.env
+(opendebates)$ python manage.py migrate
+(opendebates)$ python manage.py load_zipcode_database ./zips.csv
+(opendebates)$ npm install bower less yuglify
+(opendebates)$ cp .env.sample .env
 (opendebates)$ echo "export PATH=$PWD/node_modules/.bin:$PATH" >> $VIRTUAL_ENV/bin/postactivate
 (opendebates)$ deactivate
 $ workon opendebates
 (opendebates)$
+export SITE_DOMAIN=127.0.0.1
+
 ```
 
 Then you can start the development server:
 
 ```
-./ve/bin/python opendebates/manage.py runserver 0.0.0.0:8000
+python manage.py runserver 127.0.0.1:8000
+```
+or
+```
+gunicorn opendebates_deploy.wsgi --pythonpath /app/opendebates --log-file -
 ```
 
 ## Site copy and content

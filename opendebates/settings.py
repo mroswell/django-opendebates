@@ -152,8 +152,10 @@ if TEST:
     DEBUG = False
 else:
     DEBUG = 'DJANGO_DEBUG' in os.environ
+#DEBUG = False
+#print(DEBUG)
 
-ALLOWED_HOSTS = [os.environ.get('SITE_DOMAIN').split(",")]
+ALLOWED_HOSTS = os.environ.get('SITE_DOMAIN').split(",")
 
 INSTALLED_APPS = [
     'django.contrib.auth',
@@ -194,6 +196,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'opendebates.router.DBRoutingMiddleware',
+    'pipeline.middleware.MinifyHTMLMiddleware',
 )
 
 AUTHENTICATION_BACKENDS = [
@@ -210,6 +213,7 @@ LOGIN_URL = LOGIN_ERROR_URL = "/registration/login/"
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -222,17 +226,6 @@ TEMPLATES = [
         },
     },
 ]
-
-if DEBUG:
-    # APP_DIRS must be set when not using the cached Loader
-    TEMPLATES[0]['APP_DIRS'] = True
-else:
-    # Use the cached Loader for deployment
-    TEMPLATES[0]['OPTIONS']['loaders'] = [
-        ('django.template.loaders.cached.Loader', [
-            'django.template.loaders.app_directories.Loader',
-        ]),
-    ]
 
 WSGI_APPLICATION = 'opendebates.wsgi.application'
 
@@ -309,6 +302,11 @@ PIPELINE_COMPILERS = (
 if DEBUG:
     PIPELINE_CSS_COMPRESSOR = None
     PIPELINE_JS_COMPRESSOR = None
+else:
+    PIPELINE = True
+    PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
+    PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
+
 
 if TEST:
     PIPELINE_COMPILERS = ()
