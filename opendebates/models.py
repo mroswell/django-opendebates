@@ -95,7 +95,7 @@ class Submission(models.Model):
 
     source = models.CharField(max_length=255, null=True, blank=True)
 
-    happened = models.DateField(default=datetime.datetime.now)
+    happened = models.DateField(null=True, blank=True)
     is_positive = models.BooleanField(default=False)
 
     class Meta:

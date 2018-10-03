@@ -405,4 +405,8 @@
     $('#search-full').remove();
   });
 
+  $( ".mydatepicker" ).datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+
 })();

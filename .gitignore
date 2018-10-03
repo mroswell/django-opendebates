@@ -33,3 +33,5 @@ vagrant_ansible_inventory_default
 *.retry
 venv/
 *.pyc
+
+static/*
