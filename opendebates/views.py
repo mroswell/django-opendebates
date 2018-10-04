@@ -83,8 +83,7 @@ def recent_activity(request):
 def list_ideas(request):
     ideas = Submission.objects.all()
     citations_only = request.GET.get("citations_only")
-    #sort = choose_sort(request.GET.get('sort'))
-    sort = '-happened'
+    sort = choose_sort(request.GET.get('sort'))
 
     ideas = sort_list(citations_only, sort, ideas)
 
@@ -316,7 +315,7 @@ def questions(request):
         followup=form_data['question'],
         idea=(u'%s %s' % (form_data['headline'], form_data['question'])).strip(),
         citation=form_data['citation'],
-        happened=form_data['happened'] if form_data['happened'] else datetime.datetime.now(),
+        happened=form_data.get('happened'),
         is_positive=form_data['is_positive'],
         created_at=timezone.now(),
         ip_address=get_ip_address_from_request(request),

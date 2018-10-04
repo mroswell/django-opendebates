@@ -121,16 +121,8 @@ def sort_list(citations_only, sort, ideas):
         ideas = ideas.order_by("-score")
     elif sort == "random":
         ideas = ideas.order_by("-random_id")
-    elif sort == "-date":
-        ideas = ideas.order_by("-created_at")
-    elif sort == "+date":
-        ideas = ideas.order_by("created_at")
-    elif sort == "-votes":
-        ideas = ideas.order_by("-votes")
-    elif sort == "+votes":
-        ideas = ideas.order_by("votes")
-    elif sort == "-local_votes":
-        ideas = ideas.order_by("-local_votes")
+    else:
+        ideas = ideas.order_by(sort)
 
     return ideas
 

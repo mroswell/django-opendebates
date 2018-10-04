@@ -19,7 +19,10 @@ $ mkvirtualenv opendebates -p `which python2.7`
 (opendebates)$ deactivate
 $ workon opendebates
 (opendebates)$
+
 export SITE_DOMAIN=127.0.0.1
+or (in .env)
+SITE_DOMAIN=127.0.0.1
 
 ```
 
