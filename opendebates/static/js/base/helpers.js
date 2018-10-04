@@ -347,7 +347,6 @@
   });
 
   function setCountDown(selector, target) {
-    console.log('target', target);
     var now = new Date();
     var d = target - now;
     if (d < 0) {
