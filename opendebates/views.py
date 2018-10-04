@@ -83,7 +83,7 @@ def recent_activity(request):
 def list_ideas(request):
     ideas = Submission.objects.all()
     citations_only = request.GET.get("citations_only")
-    sort = choose_sort(request.GET.get('sort'))
+    sort = choose_sort(request.GET.get('sort', '-created_at'))
 
     ideas = sort_list(citations_only, sort, ideas)
 
@@ -315,6 +315,7 @@ def questions(request):
         followup=form_data['question'],
         idea=(u'%s %s' % (form_data['headline'], form_data['question'])).strip(),
         citation=form_data['citation'],
+        citation_verified=True,  # For the moment, default citations to verified so they show in list
         happened=form_data.get('happened'),
         is_positive=form_data['is_positive'],
         created_at=timezone.now(),
@@ -336,7 +337,7 @@ def questions(request):
     send_email("submitted_new_idea", {"idea": idea})
     send_email("notify_moderators_submitted_new_idea", {"idea": idea})
 
-    url = reverse("vote", kwargs={'id': idea.id})
+    url = reverse('list_ideas')
     return redirect(url + "#created=%s" % idea.id)
 
 

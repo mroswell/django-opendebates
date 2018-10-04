@@ -54,7 +54,7 @@
       {% if idea.headline %}
       <p>
         <strong class="headline">
-          <a href="{{ idea.get_absolute_url }}">{% blocktrans with headline=idea.headline %}{{ headline }}{% endblocktrans %}</a>
+          {% blocktrans with headline=idea.headline %}{{ headline }}{% endblocktrans %}
         </strong>
       </p>
       {% endif %}
@@ -62,7 +62,7 @@
         {% if idea.followup %}{{ idea.followup }}{% endif %}
         {% if idea.citation and idea.citation_verified %}
           <br />
-          <a class="citation" target="_blank" href="{{ idea.citation }}" title="{% blocktrans %}Has a citation &ndash; click to open{% endblocktrans %}">{% trans "User Submitted Citation" %}</a>
+          <a class="citation" target="_blank" href="{{ idea.citation }}" title="{% blocktrans %}Has a citation &ndash; click to open{% endblocktrans %}">{% trans "User-Submitted Citation" %}</a>
         {% endif %}
       </p>
     </div>
