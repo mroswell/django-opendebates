@@ -7,18 +7,18 @@ urlpatterns = [
     # url(r'^test/$', 'opendebates.views.test', name='test'),
 
     url(r'^recent/$', 'opendebates.views.recent_activity', name='recent_activity'),
-    url('^questions/(?P<id>\d+)/vote/$', 'opendebates.views.vote', name="vote"),
+    url('^issues/(?P<id>\d+)/vote/$', 'opendebates.views.vote', name="vote"),
     # url('^comment/$', 'opendebates_comments.views.post_comment',
     #     name="comment"),
-    url('^questions/(?P<id>\d+)/$', 'opendebates.views.vote', name="show_idea"),
-    url('^questions/(?P<id>\d+)/report/$', 'opendebates.views.report', name='report'),
-    url('^questions/(?P<id>\d+)/merge/$', 'opendebates.views.merge', name='merge'),
+    url('^issues/(?P<id>\d+)/$', 'opendebates.views.vote', name="show_idea"),
+    url('^issues/(?P<id>\d+)/report/$', 'opendebates.views.report', name='report'),
+    url('^issues/(?P<id>\d+)/merge/$', 'opendebates.views.merge', name='merge'),
 
     url('^category/(?P<cat_id>\d+)/$', 'opendebates.views.list_category', name="list_category"),
     url('^category/(?P<cat_id>\d+)/search/$', 'opendebates.views.category_search',
         name="category_search"),
     url('^search/$', 'opendebates.views.search_ideas', name="search_ideas"),
-    url('^questions/$', 'opendebates.views.questions', name="questions"),
+    url('^issues/$', 'opendebates.views.questions', name="questions"),
     # url('^candidates/$', 'opendebates.views.list_candidates', name="candidates"),
 
     url('^moderation/remove/$', 'opendebates.moderator_views.remove',
