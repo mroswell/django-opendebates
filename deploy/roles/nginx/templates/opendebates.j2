@@ -8,7 +8,7 @@ upstream {{ application_name }}_wsgi_server {
 
 server {
     listen      80;
-    server_name {{ nginx_server_name }}
+    server_name {{ nginx_server_name }} marylandissues.com www.marylandissues.com;
 
     client_max_body_size 4G;
 
@@ -50,9 +50,9 @@ server {
     location = /maintenance_on.html {
         root {{ virtualenv_path }}/;
     }
-    #    listen 443 ssl; # managed by Certbot
-    #ssl_certificate /etc/letsencrypt/live/staging.ticketlabs.com/fullchain.pem; # manage$
-    #ssl_certificate_key /etc/letsencrypt/live/staging.ticketlabs.com/privkey.pem; # mana$
-    #include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    #ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/marylandissues.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/marylandissues.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 }

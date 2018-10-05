@@ -1,5 +1,6 @@
-#!/bin/sh
-
+#!/bin/bash
+source /home/opendebates/.nvm/nvm.sh
+nvm use 8.9.4
 NAME="{{ application_name }}"
 DJANGODIR="{{ project_path }}"
 SOCKFILE={{ virtualenv_path }}/run/gunicorn.sock
@@ -34,5 +35,6 @@ exec gunicorn \
     --timeout {{ gunicorn_timeout_seconds|default(30) }} \
     --user $USER --group $GROUP \
     --log-level debug \
+    --error-logfile {{ virtualenv_path }}/logs/gunicorn.errors \
     --bind unix:$SOCKFILE \
     {{ application_name }}.wsgi
