@@ -14,7 +14,9 @@ SITE_DOMAIN = os.environ.get("DOMAIN", os.environ.get("SITE_DOMAIN", "127.0.0.1:
 SITE_DOMAIN_WITH_PROTOCOL = "https://" + SITE_DOMAIN
 # Both DOMAIN variables are overwritten in local_settings.py
 
-SECURE_SSL_REDIRECT = True
+#When set, this causes
+#'marylandissues.com redirected you too many times.'
+# SECURE_SSL_REDIRECT = True
 
 SUBMISSIONS_PER_PAGE = 30
 
