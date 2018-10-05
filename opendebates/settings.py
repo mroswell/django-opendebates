@@ -27,23 +27,23 @@ SITE_THEMES = {
             u"You may also vote on issues submitted by others "
             u"to help raise the profile of those issues."),
         "TWITTER_IMAGE":
-            "https://s3.amazonaws.com/s3.boldprogressives.org/images/"
-            "OpenDebates_VOTE-NOW_TW-1024x512-FODUrl.png",
+            "https://res.cloudinary.com/organica/image/upload/v1535501672/marylandissues/"
+            "MarylandIssues360.png",
         "TWITTER_SITE_TEXT":
             u"VOTE & submit questions for #FLSen #MarylandIssue between @DavidJollyFL & "
             u"@AlanGrayson h/t @OpenDebates @ProgChangeInst",
         "TWITTER_SITE_TITLE":
-            u"U.S. Senate candidates answer YOUR questions!",
+            u"CROWDSOURCE: How has the Hogan administration dealt with YOUR policy issues?",
         "TWITTER_SITE_DESCRIPTION":
-            u"Voters set the agenda for groundbreaking #MarylandIssue. Tune in Mon 4/25 @7pm EDT "
-            u"on TYTNetwork.com. Submit & vote here!",
+            u" #MarylandIssues "
+            u" Submit & vote here!",
         "TWITTER_QUESTION_TEXT":
-            u"VOTE & submit questions for #FLSen #MarylandIssue between @DavidJollyFL & @AlanGrayson "
-            u"h/t @OpenDebates @ProgChangeInst",
+            u" #MarylandIssues "
+            u" Submit & vote here!",
         "TWITTER_QUESTION_TITLE":
-            u"Vote on this question for the FL-Sen #MarylandIssue!",
+            u"Vote on this question for #MarylandIssue!",
         "TWITTER_QUESTION_DESCRIPTION":
-            u'"{idea}" Debate is 4/25 at 7pm EDT on TYTNetwork.com.',
+            u'"{idea}" #MarylandIssues.',
 
         "FACEBOOK_IMAGE":
             "https://res.cloudinary.com/organica/image/upload/v1535501672/marylandissues/"
@@ -51,17 +51,15 @@ SITE_THEMES = {
         "FACEBOOK_SITE_TITLE":
             u"CROWDSOURCE: How has the Hogan administration dealt with YOUR policy issues?",
         "FACEBOOK_SITE_DESCRIPTION":
-            u"All questions for groundbreaking #OpenDebate on Mon 4/25 @7pm EDT on TYTNetwork.com "
-            u"will be chosen from top vote-getters online. Hosted by Open Debate Coalition",
+            u"Submit #Maryland Issues on MarylandIssues.com ",
         "FACEBOOK_QUESTION_TITLE":
-            u'Click to vote on this issue for Senate candidates to answer at the #MarylandIssues '
-            u'in Florida!',
+            u"Submit #Maryland Issues on MarylandIssues.com ",
+
         "FACEBOOK_QUESTION_DESCRIPTION":
-            u'"{idea}" Mon, 4/25 @7pm EDT on TYTNetwork.com, Jolly & Grayson answer YOUR '
-            u'questions!',
+            u"CROWDSOURCE: How has the Hogan administration dealt with YOUR policy issues?",
 
         "EMAIL_SUBJECT":
-            "Help me set the agenda for the debate between Alan Grayson and David Jolly!",
+            "Help surface issues with the Hogan administration!",
         "EMAIL_BODY":
             dedent("""
             Hi there!
@@ -101,7 +99,7 @@ SITE_THEMES = {
             u"Submit & vote on questions for FL-Sen #OpenDebate between @DavidJollyFL "
             "& @AlanGrayson hosted by Open Debate Coalition, Progressive Change Inst.",
         "TWITTER_SITE_TITLE":
-            u"U.S. Senate candidates answer YOUR questions!",
+            u"How has the Hogan administration dealt with YOUR policy issues?",
         "TWITTER_SITE_DESCRIPTION":
             u"Mon 4/25 @8pm EDT on [TBD]: Voters set the agenda for groundbreaking #OpenDebate. "
             "Submit & vote here!",
