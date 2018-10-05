@@ -16,7 +16,7 @@ SITE_DOMAIN_WITH_PROTOCOL = "https://" + SITE_DOMAIN
 
 #When set, this causes
 #'marylandissues.com redirected you too many times.'
-# SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = True
 
 SUBMISSIONS_PER_PAGE = 30
 
@@ -55,9 +55,9 @@ SITE_THEMES = {
         "FACEBOOK_SITE_TITLE":
             u"CROWDSOURCE: How has the Hogan administration dealt with YOUR policy issues?",
         "FACEBOOK_SITE_DESCRIPTION":
-            u"Submit #Maryland Issues on MarylandIssues.com ",
+            u"Submit #MarylandIssues on MarylandIssues.com ",
         "FACEBOOK_QUESTION_TITLE":
-            u"Submit #Maryland Issues on MarylandIssues.com ",
+            u"Submit #MarylandIssues on MarylandIssues.com ",
 
         "FACEBOOK_QUESTION_DESCRIPTION":
             u"CROWDSOURCE: How has the Hogan administration dealt with YOUR policy issues?",
