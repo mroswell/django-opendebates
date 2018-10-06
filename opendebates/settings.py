@@ -16,7 +16,7 @@ SITE_DOMAIN_WITH_PROTOCOL = "https://" + SITE_DOMAIN
 
 #When set, this causes
 #'marylandissues.com redirected you too many times.'
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 
 SUBMISSIONS_PER_PAGE = 30
 
