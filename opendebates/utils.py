@@ -4,7 +4,7 @@ import random
 from django.conf import settings
 from django.core.cache import cache
 
-from .models import Vote, Voter, NUMBER_OF_VOTES_CACHE_ENTRY, SiteMode
+from .models import Vote, Voter, NUMBER_OF_VOTES_CACHE_ENTRY, SiteMode, IsNull
 from .router import readwrite_db
 
 
@@ -115,14 +115,17 @@ def sort_list(citations_only, sort, ideas):
     if citations_only:
         ideas = ideas.filter(citation_verified=True)
 
+    order_by = sort
     if sort == "editors":
-        ideas = ideas.order_by("-editors_pick")
+        order_by = "-editors_pick"
     elif sort == "trending":
-        ideas = ideas.order_by("-score")
+        order_by = "-score"
     elif sort == "random":
-        ideas = ideas.order_by("-random_id")
-    else:
-        ideas = ideas.order_by(sort)
+        order_by = "-random_id"
+
+    field_name = order_by.replace('-', '')
+    ideas = ideas.annotate(field_isnull=IsNull(field_name))
+    ideas = ideas.order_by('field_isnull', order_by)
 
     return ideas
 
