@@ -15,6 +15,10 @@ NUMBER_OF_VOTES_CACHE_ENTRY = 'number_of_votes'
 RECENT_EVENTS_CACHE_ENTRY = 'recent_events_cache_entry'
 
 
+class IsNull(models.Func):
+    template = '%(expressions)s IS NULL'
+
+
 class Category(CachingMixin, models.Model):
 
     name = models.CharField(max_length=255)
