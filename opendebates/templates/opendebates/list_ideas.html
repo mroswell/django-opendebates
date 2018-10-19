@@ -53,6 +53,9 @@
 {% block primary_content %}
   {% cache 30 list_ideas_content sort url_name search_term category.id %}
     <div class="sort-column">
+        <form action="{{ url_name }}" method="GET" class="form-inline" id="id_positive_form">
+            {{ positive_form.as_p }}
+        </form>
       <form action="{{ url_name }}" method="GET" class="form-inline">
         <label for="q">
           {% blocktrans %}Sort questions by{% endblocktrans %}

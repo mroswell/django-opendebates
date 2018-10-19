@@ -310,6 +310,15 @@
       }
     });
 
+    $('.positive').on('click', function(event) {
+      var target = $(event.currentTarget);
+      // If radio button is already selected, deselect it.
+      if (target.attr('checked')) {
+        target.attr('checked', false);
+      }
+      $('#id_positive_form').submit();
+    });
+
     var src = ODebates.helpers.getParameterByName("source");
     if (typeof src === "string") {
       $.cookie("opendebates.source", src, { path: "/" });

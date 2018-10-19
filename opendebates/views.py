@@ -16,7 +16,8 @@ from django.views.decorators.cache import cache_page
 from djangohelpers.lib import rendered_with, allow_http
 from registration.backends.simple.views import RegistrationView
 
-from .forms import OpenDebatesRegistrationForm, VoterForm, QuestionForm, MergeFlagForm
+from .forms import OpenDebatesRegistrationForm, VoterForm, PositiveQuestionForm, QuestionForm,\
+    MergeFlagForm
 from .models import Submission, Voter, Vote, Category, Candidate, ZipCode, \
     RECENT_EVENTS_CACHE_ENTRY, Flag
 from .router import readonly_db
@@ -84,12 +85,18 @@ def list_ideas(request):
     ideas = Submission.objects.all()
     citations_only = request.GET.get("citations_only")
     sort = choose_sort(request.GET.get('sort', '-created_at'))
+    positive_form = PositiveQuestionForm(request.GET)
 
     ideas = sort_list(citations_only, sort, ideas)
+    if positive_form.is_valid():
+        is_positive = positive_form.cleaned_data['is_positive']
+        if type(is_positive) == bool:
+            ideas = ideas.filter(is_positive=is_positive)
 
     return {
         'ideas': ideas,
         'sort': sort,
+        'positive_form': positive_form,
         'url_name': reverse('list_ideas'),
         'stashed_submission': request.session.pop(
             "opendebates.stashed_submission", None) if request.user.is_authenticated() else None,
@@ -293,7 +300,7 @@ def questions(request):
         request.session['opendebates.stashed_submission'] = {
             "category": request.POST['category'],
             "headline": request.POST['headline'],
-            "question": request.POST['question'],
+            "followup": request.POST['followup'],
             "citation": request.POST.get("citation"),
         }
         return redirect("registration_register")
@@ -312,8 +319,8 @@ def questions(request):
         voter=voter,
         category_id=category,
         headline=form_data['headline'],
-        followup=form_data['question'],
-        idea=(u'%s %s' % (form_data['headline'], form_data['question'])).strip(),
+        followup=form_data['followup'],
+        idea=(u'%s %s' % (form_data['headline'], form_data['followup'])).strip(),
         citation=form_data['citation'],
         citation_verified=True,  # For the moment, default citations to verified so they show in list
         happened=form_data.get('happened'),

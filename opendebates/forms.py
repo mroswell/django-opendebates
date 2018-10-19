@@ -30,13 +30,38 @@ class VoterForm(forms.Form):
         del self.fields['captcha']
 
 
-class QuestionForm(forms.Form):
-    category = forms.ModelMultipleChoiceField(queryset=Category.objects.all())
-    headline = forms.CharField(required=True)
-    question = forms.CharField(required=False)
-    citation = forms.URLField(required=False, max_length=255)
-    happened = forms.DateField(required=False)
-    is_positive = forms.BooleanField(required=False)
+class HorizRadioRenderer(forms.RadioSelect.renderer):
+    """ this overrides widget method to put radio buttons horizontally
+        instead of vertically.
+    """
+    def render(self):
+            """Outputs radios"""
+            return mark_safe(u'\n'.join([u'%s\n' % w for w in self]))
+
+
+def coerce_to_boolean(value):
+    if value == 'yes':
+        return True
+    if value == 'no':
+        return False
+    return None
+
+
+class PositiveQuestionForm(forms.Form):
+    CHOICES = (
+        ('yes', 'Positive'),
+        ('no', 'Negative'),
+    )
+    is_positive = forms.TypedChoiceField(
+        choices=CHOICES, required=False, label='', coerce=coerce_to_boolean,
+        widget=forms.RadioSelect(renderer=HorizRadioRenderer, attrs={'class': 'positive'})
+    )
+
+
+class QuestionForm(forms.ModelForm):
+    class Meta:
+        model = Submission
+        fields = ('category', 'headline', 'followup', 'citation', 'happened', 'is_positive')
 
     def __init__(self, *args, **kwargs):
         super(QuestionForm, self).__init__(*args, **kwargs)

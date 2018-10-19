@@ -54,7 +54,7 @@
       {% if idea.headline %}
       <p>
         <strong class="headline">
-          {% blocktrans with headline=idea.headline %}{{ headline }}{% endblocktrans %}
+          <a href="{{ idea.get_absolute_url }}">{% blocktrans with headline=idea.headline %}{{ headline }}{% endblocktrans %}</a>
         </strong>
       </p>
       {% endif %}
