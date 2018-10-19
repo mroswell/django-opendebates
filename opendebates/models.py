@@ -63,8 +63,8 @@ class Submission(models.Model):
     headline = models.TextField(null=False, blank=False)
     followup = models.TextField(null=True, blank=True)
 
-    citation = models.URLField(null=True, blank=True, db_index=True,
-                               verbose_name=_("Optional link to full proposal or reference"))
+    citation = models.CharField(max_length=2000, null=True, blank=True, db_index=True,
+                                verbose_name=_("Optional link to full proposal or reference"))
     citation_verified = models.BooleanField(default=False, db_index=True)
 
     voter = models.ForeignKey("Voter")

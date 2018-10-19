@@ -30,13 +30,10 @@ class VoterForm(forms.Form):
         del self.fields['captcha']
 
 
-class QuestionForm(forms.Form):
-    category = forms.ModelMultipleChoiceField(queryset=Category.objects.all())
-    headline = forms.CharField(required=True)
-    question = forms.CharField(required=False)
-    citation = forms.URLField(required=False, max_length=255)
-    happened = forms.DateField(required=False)
-    is_positive = forms.BooleanField(required=False)
+class QuestionForm(forms.ModelForm):
+    class Meta:
+        model = Submission
+        fields = ('category', 'headline', 'followup', 'citation', 'happened', 'is_positive')
 
     def __init__(self, *args, **kwargs):
         super(QuestionForm, self).__init__(*args, **kwargs)
