@@ -171,9 +171,11 @@
   {% if stashed_submission %}
   ODebates.stashedSubmission = {
     "category": {{ stashed_submission.category }},
-    "question": "{{ stashed_submission.question }}",
+    "followup": "{{ stashed_submission.followup }}",
     "headline": "{{ stashed_submission.headline }}",
-    "citation": {% if stashed_submission.citation %}"{{ stashed_submission.citation }}"{% else %}null{% endif %}
+    "citation": {% if stashed_submission.citation %}"{{ stashed_submission.citation }}",{% endif %}
+    "happened": {% if stashed_submission.happened %}"{{ stashed_submission.happened }}",{% endif %}
+    "is_positive": {% if stashed_submission.is_positive %}"{{ stashed_submission.is_positive }}"{% endif %}
   };
   {% endif %}
 </script>

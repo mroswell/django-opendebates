@@ -54,12 +54,12 @@
 
         <!-- Text input-->
         <div class="control-group">
-          {% if form.errors.question %}
-          {{ form.errors.question }}
+          {% if form.errors.followup %}
+          {{ form.errors.followup }}
           {% endif %}
           <div class="controls">
-            <textarea id="question" name="question" type="text" rows="4" class="input-large" maxlength="2000"
-                      placeholder="{% blocktrans %}Enter your supporting text here"{% endblocktrans %}>{{ form.data.question }}</textarea>
+            <textarea id="followup" name="followup" type="text" rows="4" class="input-large" maxlength="2000"
+                      placeholder="{% blocktrans %}Enter your supporting text here"{% endblocktrans %}>{{ form.data.followup }}</textarea>
             <div class="text-limit-counter" data-total="2000"><span class="count">2000</span> / 2000</div>
           </div>
         </div>
@@ -91,7 +91,8 @@
           {% endif %}
           <div class="controls">
             <input id="is_positive" name="is_positive" type="checkbox" class="input-large" value="1"
-                   placeholder="{% blocktrans %}Was this positive or negative{% endblocktrans %}">
+                   placeholder="{% blocktrans %}Was this positive or negative{% endblocktrans %}"
+            {% if form.data.is_positive %}checked="checked"{% endif %}>
               <label for="is_positive">Was this positive?</label>
           </div>
         </div>
