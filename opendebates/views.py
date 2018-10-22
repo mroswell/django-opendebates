@@ -296,12 +296,15 @@ def questions(request):
             'ideas': [],
         }
 
+    followup = request.POST.get('followup', '')
     if not request.user.is_authenticated():
         request.session['opendebates.stashed_submission'] = {
             "category": request.POST['category'],
             "headline": request.POST['headline'],
-            "followup": request.POST['followup'],
+            "followup": followup,
             "citation": request.POST.get("citation"),
+            "happened": request.POST.get("happened"),
+            "is_positive": request.POST.get("is_positive"),
         }
         return redirect("registration_register")
 
@@ -319,8 +322,8 @@ def questions(request):
         voter=voter,
         category_id=category,
         headline=form_data['headline'],
-        followup=form_data['followup'],
-        idea=(u'%s %s' % (form_data['headline'], form_data['followup'])).strip(),
+        followup=followup or None,
+        idea=(u'%s %s' % (form_data['headline'], followup)).strip(),
         citation=form_data['citation'],
         citation_verified=True,  # For the moment, default citations to verified so they show in list
         happened=form_data.get('happened'),

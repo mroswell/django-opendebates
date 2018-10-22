@@ -89,9 +89,9 @@ class SubmissionTest(TestCase):
         self.assertEqual(submission.voter, self.voter)
         self.assertEqual(submission.category, self.category)
         self.assertEqual(submission.headline, self.data['headline'])
-        self.assertEqual(submission.followup, self.data['question'])
+        self.assertEqual(submission.followup, self.data['followup'])
         self.assertEqual(submission.idea, u'%s %s' % (
-            self.data['headline'], self.data['question']))
+            self.data['headline'], self.data['followup']))
         self.assertEqual(submission.citation, self.data['citation'])
         self.assertEqual(submission.ip_address, '127.0.0.1')
         self.assertEqual(submission.approved, True)

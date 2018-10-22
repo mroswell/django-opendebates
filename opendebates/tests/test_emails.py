@@ -19,7 +19,7 @@ class EmailTest(TestCase):
         assert self.client.login(username=self.user.username, password=password)
         self.data = {
             'category': self.category.pk,
-            'question': 'My great question?',
+            'followup': 'My great question?',
             'headline': 'Headline of my question',
             'citation': 'https://www.google.com',
         }
@@ -41,7 +41,7 @@ class EmailTest(TestCase):
         msg = mail.outbox[0]
         self.assertEqual(msg.subject, "Thanks for your idea, %s" % self.user.first_name)
         self.assertEqual(msg.alternatives[0][0], "Your idea was %s" % '%s %s' % (
-            self.data['headline'], self.data['question']))
+            self.data['headline'], self.data['followup']))
         self.assertEqual(msg.body,
                          "Your idea citation was %s" % self.data['citation'])
         self.assertEqual(msg.from_email, self.voter.email)

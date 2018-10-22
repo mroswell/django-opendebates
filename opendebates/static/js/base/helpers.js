@@ -332,8 +332,12 @@
 
       form.find(":input[name=category]").val(htmlDecode(sub.category));
       form.find(":input[name=headline]").val(htmlDecode(sub.headline));
-      form.find(":input[name=question]").val(htmlDecode(sub.question));
+      form.find(":input[name=followup]").val(htmlDecode(sub.followup));
       form.find(":input[name=citation]").val(htmlDecode(sub.citation) || '');
+      if (sub.is_positive) {
+        form.find(":input[name=is_positive]").prop('checked', 'checked');
+      }
+      form.find(":input[name=happened]").val(htmlDecode(sub.happened) || '');
       form.submit();
     }
 
