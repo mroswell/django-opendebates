@@ -34,16 +34,15 @@ SITE_THEMES = {
             "https://res.cloudinary.com/organica/image/upload/v1535501672/marylandissues/"
             "MarylandIssues360.png",
         "TWITTER_SITE_TEXT":
-            u"VOTE & submit questions for #FLSen #MarylandIssue between @DavidJollyFL & "
-            u"@AlanGrayson h/t @OpenDebates @ProgChangeInst",
+            u"CROWDSOURCE: How has the Hogan administration dealt with YOUR policy issues?",
         "TWITTER_SITE_TITLE":
             u"CROWDSOURCE: How has the Hogan administration dealt with YOUR policy issues?",
         "TWITTER_SITE_DESCRIPTION":
-            u" #MarylandIssues "
-            u" Submit & vote here!",
+            u" #MarylandIssues and Hogan myth busters."
+            u" Browse, submit & vote here!",
         "TWITTER_QUESTION_TEXT":
-            u" #MarylandIssues "
-            u" Submit & vote here!",
+            u" #MarylandIssues and Hogan myth busters."
+            u" Browse, submit & vote here!",
         "TWITTER_QUESTION_TITLE":
             u"Vote on this question for #MarylandIssue!",
         "TWITTER_QUESTION_DESCRIPTION":
@@ -55,9 +54,9 @@ SITE_THEMES = {
         "FACEBOOK_SITE_TITLE":
             u"CROWDSOURCE: How has the Hogan administration dealt with YOUR policy issues?",
         "FACEBOOK_SITE_DESCRIPTION":
-            u"Submit #MarylandIssues on MarylandIssues.com ",
+            u"Browse, search, and submit #MarylandIssues and Hogan myth busters on MarylandIssues.com ",
         "FACEBOOK_QUESTION_TITLE":
-            u"Submit #MarylandIssues on MarylandIssues.com ",
+            u"Browse, search, and submit #MarylandIssues and Hogan myth busters on MarylandIssues.com ",
 
         "FACEBOOK_QUESTION_DESCRIPTION":
             u"CROWDSOURCE: How has the Hogan administration dealt with YOUR policy issues?",
