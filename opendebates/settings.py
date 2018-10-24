@@ -34,32 +34,28 @@ SITE_THEMES = {
             "https://res.cloudinary.com/organica/image/upload/v1535501672/marylandissues/"
             "MarylandIssues360.png",
         "TWITTER_SITE_TEXT":
-            u"CROWDSOURCE: How has the Hogan administration dealt with YOUR policy issues?",
+            u"Get the real details on Hogan's record",
         "TWITTER_SITE_TITLE":
-            u"CROWDSOURCE: How has the Hogan administration dealt with YOUR policy issues?",
+            u"Get the real details on Hogan's record",
         "TWITTER_SITE_DESCRIPTION":
-            u" #MarylandIssues and Hogan myth busters."
-            u" Browse, submit & vote here!",
+            u" Upvote the top issues that matter the most to YOU.",
         "TWITTER_QUESTION_TEXT":
-            u" #MarylandIssues and Hogan myth busters."
-            u" Browse, submit & vote here!",
+            u"Upvote the top issues that matter the most to YOU.",
         "TWITTER_QUESTION_TITLE":
-            u"Vote on this question for #MarylandIssue!",
+            u"Upvote the top issues that matter the most to YOU.",
         "TWITTER_QUESTION_DESCRIPTION":
             u'"{idea}" #MarylandIssues.',
-
         "FACEBOOK_IMAGE":
             "https://res.cloudinary.com/organica/image/upload/v1535501672/marylandissues/"
             "MarylandIssues360.png",
         "FACEBOOK_SITE_TITLE":
-            u"CROWDSOURCE: How has the Hogan administration dealt with YOUR policy issues?",
+            u"Get the real details on Hogan's record",
         "FACEBOOK_SITE_DESCRIPTION":
-            u"Browse, search, and submit #MarylandIssues and Hogan myth busters on MarylandIssues.com ",
+            u"Upvote the top issues that matter the most to YOU.",
         "FACEBOOK_QUESTION_TITLE":
-            u"Browse, search, and submit #MarylandIssues and Hogan myth busters on MarylandIssues.com ",
-
+            u"Upvote the top issues that matter the most to YOU.",
         "FACEBOOK_QUESTION_DESCRIPTION":
-            u"CROWDSOURCE: How has the Hogan administration dealt with YOUR policy issues?",
+            u"Get the real details on Hogan's record",
 
         "EMAIL_SUBJECT":
             "Help surface issues with the Hogan administration!",
